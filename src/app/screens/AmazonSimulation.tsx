@@ -203,10 +203,10 @@ function LucyWarning({ onClose, onContinue }: { onClose: () => void; onContinue:
   return (
     <div
       className="absolute inset-0 flex flex-col"
-      style={{ background: "#0a0b14", zIndex: 150, overflowY: "auto" }}
+      style={{ background: "#0a0b14", zIndex: 150 }}
     >
-      {/* Header */}
-      <div className="flex items-center justify-between px-4 pt-14 pb-3">
+      {/* Fixed header */}
+      <div className="flex items-center justify-between px-4 pt-14 pb-3" style={{ flexShrink: 0 }}>
         <div className="flex items-center gap-3">
           <div
             className="flex items-center justify-center rounded-full font-extrabold"
@@ -223,6 +223,9 @@ function LucyWarning({ onClose, onContinue }: { onClose: () => void; onContinue:
           <X size={20} style={{ color: "#6b7280" }} />
         </button>
       </div>
+
+      {/* Scrollable content */}
+      <div style={{ flex: 1, overflowY: "auto" }}>
 
       {/* Item card */}
       <div className="mx-4 mb-4 rounded-2xl p-4 flex items-center gap-3" style={{ background: "#1e2235" }}>
@@ -302,7 +305,7 @@ function LucyWarning({ onClose, onContinue }: { onClose: () => void; onContinue:
       </div>
 
       {/* CTAs */}
-      <div className="px-4 pb-8 flex flex-col gap-3 mt-auto">
+      <div className="px-4 pb-8 flex flex-col gap-3">
         <button
           onClick={onClose}
           className="w-full rounded-2xl py-3.5 font-bold text-sm"
@@ -318,6 +321,8 @@ function LucyWarning({ onClose, onContinue }: { onClose: () => void; onContinue:
           Continua comunque
         </button>
       </div>
+
+      </div>{/* end scrollable */}
     </div>
   );
 }

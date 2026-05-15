@@ -291,7 +291,7 @@ function KairosIntervention({ onClose, onOrder }: { onClose: () => void; onOrder
 
         {/* Action buttons — inside scroll so bisogna scorrere per vederli */}
         <div style={{ display: "flex", flexDirection: "column", gap: 10, paddingBottom: 8 }}>
-          <button style={{ width: "100%", padding: "16px", borderRadius: 16, background: "linear-gradient(135deg,#0f3f2a,#0f2318)", border: "1px solid rgba(52,211,153,0.3)", color: "#34d399", fontSize: 16, fontWeight: 800, cursor: "pointer" }}>
+          <button onClick={onClose} style={{ width: "100%", padding: "16px", borderRadius: 16, background: "linear-gradient(135deg,#0f3f2a,#0f2318)", border: "1px solid rgba(52,211,153,0.3)", color: "#34d399", fontSize: 16, fontWeight: 800, cursor: "pointer" }}>
             🍳 Cucina a casa — risparmia €24.90
           </button>
           <button onClick={onOrder} style={{ width: "100%", padding: "13px", borderRadius: 16, background: "transparent", border: "1px solid #2d3347", color: "#4b5563", fontSize: 14, fontWeight: 600, cursor: "pointer" }}>

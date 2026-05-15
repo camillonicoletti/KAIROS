@@ -90,9 +90,9 @@ function BudgetDetail({ onClose }: { onClose: () => void }) {
   const periods = ["Oggi", "1 sett", "3 mesi"];
 
   return (
-    <div className="absolute inset-0 flex flex-col" style={{ background: "#0a0b14", zIndex: 50, overflowY: "auto" }}>
+    <div className="flex flex-col flex-1 overflow-y-auto" style={{ background: "#0a0b14" }}>
       {/* Header */}
-      <div className="flex items-center gap-3 px-4 pt-14 pb-2">
+      <div className="flex items-center gap-3 px-4 pt-4 pb-2">
         <button onClick={onClose} className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: "#1e2235" }}>
           <ArrowLeft size={18} style={{ color: "#e2e8f0" }} />
         </button>
@@ -279,9 +279,9 @@ function BnplDetail({ onClose }: { onClose: () => void }) {
   };
 
   return (
-    <div className="absolute inset-0 flex flex-col" style={{ background: "#0a0b14", zIndex: 50, overflowY: "auto" }}>
+    <div className="flex flex-col flex-1 overflow-y-auto" style={{ background: "#0a0b14" }}>
       {/* Header */}
-      <div className="flex items-center gap-3 px-4 pt-14 pb-4">
+      <div className="flex items-center gap-3 px-4 pt-4 pb-4">
         <button onClick={onClose} className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: "#1e2235" }}>
           <ArrowLeft size={18} style={{ color: "#e2e8f0" }} />
         </button>
@@ -395,11 +395,11 @@ function SubscriptionsDetail({ onClose }: { onClose: () => void }) {
 
   return (
     <div
-      className="absolute inset-0 flex flex-col"
-      style={{ background: "#0a0b14", zIndex: 50, overflowY: "auto" }}
+      className="flex flex-col flex-1 overflow-y-auto"
+      style={{ background: "#0a0b14" }}
     >
       {/* Header */}
-      <div className="flex items-center gap-3 px-4 pt-14 pb-4">
+      <div className="flex items-center gap-3 px-4 pt-4 pb-4">
         <button
           onClick={onClose}
           className="w-9 h-9 rounded-full flex items-center justify-center"
@@ -478,11 +478,12 @@ export default function BankingScreen({ onOpenAmazon }: { onOpenAmazon?: () => v
   const activeSubscriptions = subscriptions.filter((s) => s.status === "active");
   const subsTotal = activeSubscriptions.reduce((s, sub) => s + sub.monthly, 0);
 
+  if (showBudget) return <BudgetDetail onClose={() => setShowBudget(false)} />;
+  if (showBnpl) return <BnplDetail onClose={() => setShowBnpl(false)} />;
+  if (showSubs) return <SubscriptionsDetail onClose={() => setShowSubs(false)} />;
+
   return (
-    <div className="flex flex-col gap-4 py-4 overflow-y-auto flex-1 relative">
-      {showBudget && <BudgetDetail onClose={() => setShowBudget(false)} />}
-      {showBnpl && <BnplDetail onClose={() => setShowBnpl(false)} />}
-      {showSubs && <SubscriptionsDetail onClose={() => setShowSubs(false)} />}
+    <div className="flex flex-col gap-4 py-4 overflow-y-auto flex-1">
       {/* Header */}
       <div className="flex items-center justify-between px-4">
         <div>

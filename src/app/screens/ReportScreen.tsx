@@ -126,6 +126,24 @@ export default function ReportScreen() {
           </div>
         </div>
 
+        {/* Lucy — collapsed bar inside scroll so appare in fondo */}
+        <button
+          onClick={openChat}
+          className="flex items-center gap-3 px-4 rounded-2xl flex-shrink-0 mb-2"
+          style={{ height: 52, background: "#1e2235", border: "1px solid rgba(167,139,250,0.25)", width: "100%" }}
+        >
+          <div
+            className="flex items-center justify-center rounded-full font-extrabold flex-shrink-0"
+            style={{ width: 28, height: 28, background: "linear-gradient(135deg,#7c3aed,#a78bfa)", color: "#fff", fontSize: 12 }}
+          >
+            L
+          </div>
+          <span style={{ flex: 1, fontSize: 12, color: "#6b7280", textAlign: "left" }}>Chiedi qualcosa a Lucy…</span>
+          <div className="flex items-center gap-1 flex-shrink-0">
+            <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#34d399" }} />
+            <span style={{ fontSize: 9, color: "#34d399" }}>online</span>
+          </div>
+        </button>
 
       </div>
 
@@ -224,26 +242,6 @@ export default function ReportScreen() {
         </div>
       )}
 
-      {/* Lucy — collapsed bar (visible when chat is closed) */}
-      {!chatOpen && (
-        <button
-          onClick={openChat}
-          className="mx-4 mb-3 flex items-center gap-3 px-4 rounded-2xl flex-shrink-0"
-          style={{ height: 52, background: "#1e2235", border: "1px solid rgba(167,139,250,0.25)", width: "calc(100% - 32px)" }}
-        >
-          <div
-            className="flex items-center justify-center rounded-full font-extrabold flex-shrink-0"
-            style={{ width: 28, height: 28, background: "linear-gradient(135deg,#7c3aed,#a78bfa)", color: "#fff", fontSize: 12 }}
-          >
-            L
-          </div>
-          <span style={{ flex: 1, fontSize: 12, color: "#6b7280", textAlign: "left" }}>Chiedi qualcosa a Lucy…</span>
-          <div className="flex items-center gap-1 flex-shrink-0">
-            <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#34d399" }} />
-            <span style={{ fontSize: 9, color: "#34d399" }}>online</span>
-          </div>
-        </button>
-      )}
     </div>
   );
 }

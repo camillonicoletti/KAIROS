@@ -1,5 +1,5 @@
 export const user = {
-  name: "Sim",
+  name: "CX Napoli",
   weekNumber: 20,
   profilingDone: true,
   totalSaved: 284.6,
