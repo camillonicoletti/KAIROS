@@ -425,7 +425,7 @@ export function RecipeExplorer({ onClose, chatOnly = false }: { onClose: () => v
       {/* Header */}
       <div style={{ padding: "14px 16px 10px", display: "flex", alignItems: "center", gap: 12, flexShrink: 0 }}>
         <button
-          onClick={chatMode ? () => { setChatMode(false); setMessages([]); } : onClose}
+          onClick={chatMode ? (chatOnly ? onClose : () => { setChatMode(false); setMessages([]); }) : onClose}
           style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(255,255,255,0.08)", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", color: "#f1f5f9", fontSize: 16 }}
         >
           ←
