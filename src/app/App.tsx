@@ -43,8 +43,8 @@ export default function App() {
       <div
         className="relative"
         style={{
-          width: 410,
-          height: 870,
+          width: 360,
+          height: 760,
           maxHeight: "100%",
           background: "linear-gradient(160deg, #1f1f2a 0%, #0a0a14 100%)",
           borderRadius: 56,
