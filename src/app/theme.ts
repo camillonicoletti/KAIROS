@@ -1,0 +1,18 @@
+export const T = {
+  outer: "#060810",
+  bg: "#0a0b14",
+  card: "#1e2235",
+  cardSolid: "#1e2235",
+  inner: "#141824",
+  border: "rgba(210,173,58,0.3)",
+  borderSoft: "rgba(255,255,255,0.06)",
+  gold: "#d2ad3a",
+  goldDim: "rgba(210,173,58,0.14)",
+  goldStrong: "rgba(210,173,58,0.4)",
+  goldLight: "#e6c66f",
+  text: "#ffffff",
+  textMuted: "rgba(255,255,255,0.6)",
+  textDim: "rgba(255,255,255,0.35)",
+  urgent: "#ff5252",
+  urgentDim: "rgba(255,82,82,0.18)",
+};
